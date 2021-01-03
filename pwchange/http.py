@@ -28,10 +28,10 @@ class Interface(fooster.web.form.FormMixIn, fooster.web.page.PageHandler):
     def do_post(self):
         try:
             username = self.request.body['username'].strip().lower()
-            password = self.request.body['password']
-            otp = self.request.body['otp']
             new_password = self.request.body['new_password']
             verify_password = self.request.body['verify_password']
+            password = self.request.body['password']
+            otp = self.request.body['otp']
         except (KeyError, TypeError):
             raise fooster.web.HTTPError(400)
 
