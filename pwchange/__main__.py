@@ -35,7 +35,7 @@ def main():
             config.http_log = args.log + '/http.log'
 
     if args.base:
-        config.base = config_loaded.base
+        config.base = args.base
         if not config.base.startswith('/'):
             config.base = '/' + config.base
         if not config.base.endswith('/'):
