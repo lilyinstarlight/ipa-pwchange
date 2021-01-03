@@ -42,7 +42,7 @@ class Interface(fooster.web.form.FormMixIn, fooster.web.page.PageHandler):
                 self.message = 'Successfully changed password'
             else:
                 self.message = 'New password and verify password do not match'
-        except (NameError, ValueError, RuntimeError) as err:
+        except (NameError, ValueError) as err:
             log.warn('Error occured while trying to change password: {}'.format(err))
 
             self.message = str(err)
