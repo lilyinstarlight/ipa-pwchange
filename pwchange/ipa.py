@@ -5,7 +5,7 @@ from pwchange import config
 
 
 def pwchange(username, password, new_password, otp=None):
-    client = python_freeipa.ClientMeta(config.ipa_server)
+    client = python_freeipa.ClientMeta(config.ipa_server, verify_ssl=config.verify_ssl)
 
     try:
         client.change_password(username=username, new_password=new_password, old_password=password, otp=otp)

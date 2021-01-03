@@ -14,6 +14,8 @@ def main():
     parser.add_argument('-l', '--log', dest='log', help='log directory to use')
     parser.add_argument('-b', '--base', dest='base', help='base URL path to use')
     parser.add_argument('-s', '--ipa-server', dest='ipa_server', help='IPA server host')
+    parser.add_argument('-n', '--no-verify-ssl', action='store_false', default=True, dest='verify_ssl', help='disable certificate verification')
+    parser.add_argument('-c', '--ca-cert', dest='ca_cert', help='IPA CA cert path')
 
     args = parser.parse_args()
 
@@ -43,6 +45,11 @@ def main():
 
     if args.ipa_server:
         config.ipa_server = args.ipa_server
+
+    config.verify_ssl = args.verify_ssl
+
+    if config.verify_ssl and args.ca_cert:
+        config.verify_ssl = args.ca_cert
 
     config._apply()
 

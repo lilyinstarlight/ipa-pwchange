@@ -20,8 +20,11 @@ template = _path.dirname(__file__) + '/html'
 # URL base path
 base = '/'
 
-# account or key details
+# IPA server host
 ipa_server = 'ipa.demo1.freeipa.org'
+
+# SSL verification (path to certificate, True, or False)
+verify_ssl = True
 
 
 # store config in env var
