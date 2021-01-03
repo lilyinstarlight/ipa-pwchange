@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>pwchange</title>
+
+		<style>
+			label {{
+				float: right;
+			}}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<p>{message}</p>
+
+			<form method="POST" enctype="multipart/form-data">
+				<table>
+					<tr>
+						<td><label for="username">Username:</label></td>
+						<td><input id="username" name="username" type="text" value="{username}"/></td>
+					</tr>
+					<tr>
+						<td><label for="password">Current Password:</label></td>
+						<td><input id="password" name="password" type="password"/></td>
+					</tr>
+					<tr>
+						<td><label for="otp">OTP (optional):</label></td>
+						<td><input id="otp" name="otp" type="password"/></td>
+					</tr>
+					<tr>
+						<td><label for="new_password">New Password:</label></td>
+						<td><input id="new_password" name="new_password" type="password"/></td>
+					</tr>
+					<tr>
+						<td><label for="verify_password">Verify Password:</label></td>
+						<td><input id="verify_password" name="verify_password" type="password"/></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="submit" value="Submit"/></td>
+					</tr>
+				</table>
+			</form>
+		</main>
+	</body>
+</html>
