@@ -26,6 +26,9 @@ ipa_server = 'ipa.demo1.freeipa.org'
 # SSL verification (path to certificate, True, or False)
 verify_ssl = True
 
+# Group allowed to use utility (None means no restriction)
+group = None
+
 
 # store config in env var
 def _store():

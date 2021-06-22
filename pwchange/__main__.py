@@ -1,5 +1,4 @@
 import argparse
-import importlib.util
 import logging
 import signal
 
@@ -16,6 +15,7 @@ def main():
     parser.add_argument('-s', '--ipa-server', dest='ipa_server', help='IPA server host')
     parser.add_argument('-n', '--no-verify-ssl', action='store_false', default=True, dest='verify_ssl', help='disable certificate verification')
     parser.add_argument('-c', '--ca-cert', dest='ca_cert', help='IPA CA cert path')
+    parser.add_argument('-g', '--group', dest='group', help='group allowed to use utility (default everyone)')
 
     args = parser.parse_args()
 
@@ -50,6 +50,9 @@ def main():
 
     if config.verify_ssl and args.ca_cert:
         config.verify_ssl = args.ca_cert
+
+    if args.group:
+        config.group = args.group
 
     config._apply()
 
